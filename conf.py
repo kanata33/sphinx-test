@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinx-test'
+project = 'Chasn'
 copyright = '2020, CSN'
 author = 'CSN'
 
