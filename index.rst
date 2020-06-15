@@ -10,7 +10,6 @@ Welcome to Chasina's Pandas documentation!
    :maxdepth: 2
    :glob:
    
-   page01
    page02
    page03
    page04

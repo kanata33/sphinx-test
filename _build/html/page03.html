@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DataFrame &mdash; sphinx-test  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="常用操作" href="page04.html" />
+    <link rel="prev" title="Series" href="page02.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sphinx-test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="page01.html">锘縋andas姒傝堪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page02.html">Series</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page04.html">常用操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page05.html">可视化</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sphinx-test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>DataFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/page03.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dataframe">
+<h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
+<p>DataFrame是一个类似表格的数据结构，索引包括列索引和行索引，包含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔值等）。
+如下：</p>
+<p>index：行索引。</p>
+<p>columns：列索引。</p>
+<p>values：值的二维数组。</p>
+<p>name：名字。</p>
+<p>构建方法，DataFrame(sequence)，通过序列构建，序列中的每个元素是一个字典。</p>
+<p>frame=DateFrame构建完之后，假设frame中有’name’,’age’,’addr’三个属性，可以使用fame[‘name’]查看属性列内容，也可以fame.name这样直接查看。</p>
+<p>frame按照’属性提取出来的每个列是一个Series类。</p>
+<p>DataFrame类可以使用布尔型索引。</p>
+<p>groupby(str|array…)函数：可以使用frame中对应属性的str或者和frame行数相同的array作为参数还可以使用一个会返回和frame长度相同list的函数作为参数，如果使用函数做分组参数，这个用做分组的函数传入的参数将会是fame的index，参数个数任意。使用了groupby函数之后配合,size()函数就可以对groupby结果进行统计。</p>
+<p>groupby后可以使用：</p>
+<p>size()：就是count</p>
+<p>sum()：分组求和</p>
+<p>apply(func，axis=0)：在分组上单独使用函数func返回frame，不groupby用在DataFrame会默认将func用在每个列上，如果axis=1表示将func用在行上。</p>
+<p>reindex(index,column,method)：用来重新命名索引，和插值。</p>
+<p>size()：会返回一个frame，这个frame是groupby后的结果。</p>
+<p>sum(n).argsort()：如果frame中的值是数字，可以使用sum函数计算frame中摸个属性，各个因子分别求和，并返回一个Series，这个Series可以做为frame.take的参数，拿到frame中对应的行。</p>
+<p>pivot_table(操作str1,index=str2,columns=str3,aggfunc=str4)透视图函数：</p>
+<p>str1：是给函数str4作为参数的部分。</p>
+<p>str2：是返回frame的行名。</p>
+<p>str3：是返回frame的列名。</p>
+<p>str4：是集合函数名，有’mean’,’sum’这些，按照str2，str3分组。</p>
+<p>使用透视图函数之后，可以使用.sum()这类型函数，使用后会按照index和columns的分组求和。</p>
+<p>order_index(by,ascending):
+返回一个根据by排序，asceding=True表示升序，False表示降序的frame</p>
+<p>concat(list)：将一个列表的frame行数加起来。</p>
+<p>ix[index]：就是行索引，DataFrame的普通下标是列索引。</p>
+<p>take(index)：作用和ix差不多，都是查询行，但是ix传入行号，take传入行索引。</p>
+<p>unstack()：将行信息变成列信息。</p>
+<p>apply(func，axis=0)和applymap(func)：apply用在DataFrame会默认将func用在每个列上，如果axis=1表示将func用在行上。applymap表示func用在每个元素上。</p>
+<p>combine_first(frame2)：combine_first会把frame中的空值用frame1中对应位置的数据进行填充。Series方法也有相同的方法。</p>
+<p>stack()函数，可以将DataFrame的列转化成行，原来的列索引成为行的层次索引。（stack和unstack方法是两个互逆的方法，可以用来进行Series和DataFrame之间的转换）</p>
+<p>duplicated()：返回一个布尔型Series，表示各行是否重复。
+drop_duplicates()：返回一个移除了重复行后的DataFrame</p>
+<p>pct_change()：Series也有这个函数，这个函数用来计算同colnums两个相邻的数字之间的变化率。</p>
+<p>corr()：计算相关系数矩阵。</p>
+<p>cov()：计算协方差系数矩阵。</p>
+<p>corrwith(Series|list,axis=0)：axis=0时计算frame的每列和参数的相关系数。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="page04.html" class="btn btn-neutral float-right" title="常用操作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="page02.html" class="btn btn-neutral float-left" title="Series" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, CSN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
