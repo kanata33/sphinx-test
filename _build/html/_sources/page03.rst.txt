@@ -67,8 +67,7 @@ combine_first(frame2)£ºcombine_first»á°ÑframeÖĞµÄ¿ÕÖµÓÃframe1ÖĞ¶ÔÓ¦Î»ÖÃµÄÊı¾İ½øĞ
 stack()º¯Êı£¬¿ÉÒÔ½«DataFrameµÄÁĞ×ª»¯³ÉĞĞ£¬Ô­À´µÄÁĞË÷Òı³ÉÎªĞĞµÄ²ã´ÎË÷Òı¡££¨stackºÍunstack·½·¨ÊÇÁ½¸ö»¥ÄæµÄ·½·¨£¬¿ÉÒÔÓÃÀ´½øĞĞSeriesºÍDataFrameÖ®¼äµÄ×ª»»£©
 
 duplicated()£º·µ»ØÒ»¸ö²¼¶ûĞÍSeries£¬±íÊ¾¸÷ĞĞÊÇ·ñÖØ¸´¡£
-drop_duplicates()£º·µ»ØÒ»¸öÒÆ³ıÁËÖØ¸´ĞĞºóµÄDataFrame
-
+drop_duplicates()£º·µ»ØÒ»¸öÒÆ³ıÁËÖØ¸´ĞĞºóµÄDataFrame.
 pct_change()£ºSeriesÒ²ÓĞÕâ¸öº¯Êı£¬Õâ¸öº¯ÊıÓÃÀ´¼ÆËãÍ¬colnumsÁ½¸öÏàÁÚµÄÊı×ÖÖ®¼äµÄ±ä»¯ÂÊ¡£
 
 corr()£º¼ÆËãÏà¹ØÏµÊı¾ØÕó¡£
