@@ -1,6 +1,6 @@
-¿ÉÊÓ»¯
+å¯è§†åŒ–
 ========================================
-PythonÖÐÓÐÐí¶à¿ÉÊÓ»¯Ä£¿é£¬ÎÒÃÇÍ¨³£Ê¹ÓÃmatpalotlib¿â£¬ÔÙÊ¹ÓÃpandasÄ£¿éÖÐ¼¯³ÉµÄRµÄggplotÖ÷ÌâÀ´ÃÀ»¯Í¼±í¡£
+Pythonä¸­ç”±è®¸å¤šå¯è§†åŒ–æ¨¡å—ï¼Œæˆ‘ä»¬é€šå¸¸ä½¿ç”¨matpalotlibåº“ï¼Œå†ä½¿ç”¨pandasæ¨¡å—ä¸­é›†æˆçš„Rçš„ggplotä¸»é¢˜æ¥ç¾ŽåŒ–å›¾è¡¨ã€‚
 ::
 	import matplotlib.pyplot as plt
 	
